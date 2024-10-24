@@ -24,7 +24,7 @@ namespace DnDKlassen {
         }
     }
 
-    const aragorn: Krieger = new Krieger(); //Erstellen eines neuen Objektes (Vektor) basierend auf dem Bauplan
+    const aragorn: Krieger = new Krieger(); //Erstellen eines neuen Objektes (Krieger) basierend auf dem Bauplan
     aragorn.firstLevel(5,5)
     console.log("Ich bin ein krieger oder so")
     console.log(aragorn)
