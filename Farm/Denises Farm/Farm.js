@@ -8,6 +8,9 @@ var FarmSimulation;
         }
         simulateDay() {
             for (let i = 0; i < this.stable.length; i++) {
+                const animal = this.stable[i];
+                animal.sing();
+                animal.eat();
             }
         }
     }

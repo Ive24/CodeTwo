@@ -12,7 +12,9 @@ namespace FarmSimulation {
 
     simulateDay (): void {
         for (let i: number = 0; i < this.stable.length; i++) {
-            
+            const animal: Animal = this.stable[i];
+            animal.sing();
+            animal.eat();
         }
     }
 }
