@@ -11,7 +11,9 @@ var FarmSimulation;
             console.log(this.type + " " + String(this.stock) + ": Units of " + this.type + " are remaining in the Pantry");
         }
         restock() {
-            if (this.stock > 10) { }
+            if (this.stock > 10) {
+                console.log("Enough food remaining.");
+            }
             else if (this.stock <= 10) {
                 this.stock = this.fullStock;
             }
