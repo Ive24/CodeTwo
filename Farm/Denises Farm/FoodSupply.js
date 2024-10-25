@@ -8,7 +8,7 @@ var FarmSimulation;
             this.fullStock = _fullStock;
         }
         report() {
-            console.log(this.type + String(this.stock) + "remaining in the Pantry");
+            console.log(this.type + " " + String(this.stock) + ": Units of " + this.type + " are remaining in the Pantry");
         }
         restock() {
             if (this.stock > 10) { }

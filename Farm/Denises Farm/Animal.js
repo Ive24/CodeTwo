@@ -14,9 +14,10 @@ var FarmSimulation;
             this.food.report();
         }
         sing() {
-            const song = this.noise + this.noise;
-            const verse1 = "Old MacDonald had a farm.E - I - E - I - O.And on that farm he had a" + this.name + ".E - I - E - I - O With an " + song + " here. And an " + song + " there. Here an " + this.noise + ". There an " + this.noise + ". Everywhere an " + song + ". Old MacDonald had a farm.E - I - E - I - O.";
-            console.log("This is" + this.name + "the" + this.species);
+            const song = this.noise + " " + this.noise;
+            // /n new line for line breaks
+            const verse1 = "Old MacDonald had a farm. E - I - E - I - O.\nAnd on that farm he had a " + this.name + ". E - I - E - I - O.\nWith an " + song + " here. And an " + song + " there\nHere an " + this.noise + ". There an " + this.noise + ".\nEverywhere an " + song + ". Old MacDonald had a farm.E - I - E - I - O.";
+            console.log("This is " + this.name + " the " + this.species);
             console.log(verse1);
         }
     }

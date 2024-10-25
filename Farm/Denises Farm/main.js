@@ -15,8 +15,9 @@ var FarmSimulation;
         const cow = new FarmSimulation.Animal("Cow", "Beatrice", "Muh", pantryMacDonald[2], 5);
         const goat = new FarmSimulation.Animal("Goat", "MGisela", "Mäh", pantryMacDonald[1], 2);
         stableMacDonald.push(cat, dog, horse, cow, goat);
+        // create the farm object
         const macDonald = new FarmSimulation.Farm(stableMacDonald, pantryMacDonald);
-        // macDonald.simulateDay()
+        // add a listner for a click event 
         window.addEventListener("click", macDonald.simulateDay); //.bind(macDonald)); an alternative to declare that the called function gets used with the wanted object
         function loop() {
             requestAnimationFrame(loop);

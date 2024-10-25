@@ -13,7 +13,7 @@ namespace FarmSimulation {
         }
 
         public report(): void {
-            console.log(this.type + String(this.stock) + "remaining in the Pantry");
+            console.log(this.type + " " + String(this.stock) + ": Units of " + this.type + " are remaining in the Pantry");
         }
 
         public restock(): void {
