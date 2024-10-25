@@ -26,3 +26,4 @@ var FarmSimulation;
     }
     FarmSimulation.Farm = Farm;
 })(FarmSimulation || (FarmSimulation = {}));
+//# sourceMappingURL=Farm.js.map

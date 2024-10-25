@@ -19,3 +19,4 @@ var FarmSimulation;
     }
     FarmSimulation.FoodSupply = FoodSupply;
 })(FarmSimulation || (FarmSimulation = {}));
+//# sourceMappingURL=FoodSupply.js.map

@@ -19,3 +19,4 @@ var FarmSimulation;
         window.addEventListener("click", macDonald.simulateDay);
     }
 })(FarmSimulation || (FarmSimulation = {}));
+//# sourceMappingURL=main.js.map
