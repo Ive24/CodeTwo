@@ -16,7 +16,12 @@ var FarmSimulation;
         const goat = new FarmSimulation.Animal("Goat", "MGisela", "Mäh", pantryMacDonald[1], 2);
         stableMacDonald.push(cat, dog, horse, cow, goat);
         const macDonald = new FarmSimulation.Farm(stableMacDonald, pantryMacDonald);
-        window.addEventListener("click", macDonald.simulateDay);
+        // macDonald.simulateDay()
+        window.addEventListener("click", macDonald.simulateDay); //.bind(macDonald)); an alternative to declare that the called function gets used with the wanted object
+        function loop() {
+            requestAnimationFrame(loop);
+        }
+        requestAnimationFrame(loop);
     }
 })(FarmSimulation || (FarmSimulation = {}));
 //# sourceMappingURL=main.js.map

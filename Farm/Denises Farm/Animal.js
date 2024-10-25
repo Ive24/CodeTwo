@@ -15,8 +15,9 @@ var FarmSimulation;
         }
         sing() {
             const song = this.noise + this.noise;
+            const verse1 = "Old MacDonald had a farm.E - I - E - I - O.And on that farm he had a" + this.name + ".E - I - E - I - O With an " + song + " here. And an " + song + " there. Here an " + this.noise + ". There an " + this.noise + ". Everywhere an " + song + ". Old MacDonald had a farm.E - I - E - I - O.";
             console.log("This is" + this.name + "the" + this.species);
-            console.log(song);
+            console.log(verse1);
         }
     }
     FarmSimulation.Animal = Animal;

@@ -23,10 +23,17 @@ namespace FarmSimulation {
 
 
         const macDonald: Farm = new Farm(stableMacDonald, pantryMacDonald);
+        // macDonald.simulateDay()
+        window.addEventListener("click", macDonald.simulateDay); //.bind(macDonald)); an alternative to declare that the called function gets used with the wanted object
 
-        window.addEventListener("click", macDonald.simulateDay);
+        function loop(): void {
+            requestAnimationFrame(loop);
+        }
+
+        requestAnimationFrame(loop);
 
     }
+
 }
 
 

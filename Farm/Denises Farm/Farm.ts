@@ -2,15 +2,17 @@ namespace FarmSimulation {
 
     export class Farm {
 
-        private stable: Animal[];
-        private pantry: FoodSupply[];
+        public stable: Animal[];
+        public pantry: FoodSupply[];
 
         public constructor(_stable: Animal[], _pantry: FoodSupply[]) {
             this.stable = _stable;
             this.pantry = _pantry;
         }
 
-        public simulateDay(): void {
+        // public simulateDay(): void { // alternative (if bind used in the main.ts)
+        public simulateDay = (): void => { // Arrow Function:it takes the parameters and run the function with them 
+            console.log("Ok");
             for (let i: number = 0; i < this.stable.length; i++) {
                 const animal: Animal = this.stable[i];
                 animal.sing();
