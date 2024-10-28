@@ -4,6 +4,8 @@ namespace Asteroid_Project {
 
     export let crc2: CanvasRenderingContext2D; //mit export deklarierte Variablen, Klassen und Funktionen können in anderen Files unter dem selben namespace genutzt werden
 
+    const asteroids: Asteroid[] = [];
+
     function handleLoad(_event: Event): void { //Rückgabeparameter ist vom Typ Event
         console.log("Asteroids are starting.");
         const canvas: HTMLCanvasElement | null = document.querySelector("canvas"); //  | bedeutet "oder", die Konstante canvas kann entweder
@@ -18,11 +20,35 @@ namespace Asteroid_Project {
         createPaths();
         console.log("Asteroids paths", asteroidPaths);
 
-        const asteroid: Asteroid = new Asteroid(1); // = ist immer eine Zuweisung, der Konstante asteroid vom Typ Asteroid wird ein neu kreiertes Objekt zugewiesen mit der Größe 1
-        console.log(asteroid);
+        createAsteroids(5);
+        //createShip();
 
-        asteroid.draw();
-        asteroid.move(0.1);
+        //canvas.addEventListner("mousedown", loadLaser);
+        //canvas.addEventListner("mouseup", shootLaser);
+        //canvas.addEventListner("keypress", handleKeypress);
+        //canvas.addEventListner("mousemove", setHeading);
 
+        window.setInterval(update, 20); //alle 20 Millisekunden/ 50 mal pro Sekunde wird die Methode update aufgerufen
+    }
+
+    function createAsteroids(_nAsteroids: number): void { //Schleife läuft fünf mal durch (siehe Zeile 23), jedes Mal wird ein neuer Asteroid erstellt
+        console.log("create asteroids");
+        for (let i: number = 0; i < _nAsteroids; i++) {
+            const asteroid: Asteroid = new Asteroid(1.0);
+            asteroids.push(asteroid); //die Asteroiden werden in das asteroids Array gepackt
+        }
+    }
+
+    function update(): void {
+        console.log("Update");
+        crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height); //clear background
+
+        for (const asteroid of asteroids) { //gehe das Array asteroids durch und hole nacheinander alle Elemente/ Asteroiden
+            asteroid.move(1 / 50); // timeslice sind jetzt hier die 20 Millisekunden 
+            asteroid.draw();
+        }
+
+        // ship.draw();
+        // handleCollisions();
     }
 }
