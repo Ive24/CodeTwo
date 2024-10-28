@@ -12,6 +12,17 @@ var Asteroid_Project;
         }
         move(_timeslice) {
             console.log("Asteroid movement");
+            const offset = new Asteroid_Project.Vector(this.velocity.x, this.velocity.y); //so weit würde der Asteroid in einer Sekunde kommen
+            offset.scale(_timeslice); // um die Zeitspanne skalieren (kleinerer Wert)
+            this.position.add(offset); //die Veränderung auf die aktuelle Position draufrechnen
+            if (this.position.x < 0) // wenn die Asteroiden das Canvas verlassen sollen sie auf der anderen Seite wieder erscheinen
+                this.position.x += Asteroid_Project.crc2.canvas.width; // dazu wird der Asteroid. um die Canvas-Länge/Höhe verschoben
+            if (this.position.y < 0)
+                this.position.y += Asteroid_Project.crc2.canvas.height;
+            if (this.position.x > Asteroid_Project.crc2.canvas.width)
+                this.position.x -= Asteroid_Project.crc2.canvas.width;
+            if (this.position.y > Asteroid_Project.crc2.canvas.height)
+                this.position.y -= Asteroid_Project.crc2.canvas.height;
         }
         draw() {
             console.log("Asteroid draw");
