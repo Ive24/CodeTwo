@@ -3,7 +3,7 @@ var Asteroid_Project;
 (function (Asteroid_Project) {
     class Asteroid {
         constructor(_size) {
-            console.log("asteroid constructor");
+            console.log("asteroid constructor"); //console.log to check if the method works
         }
         moveBy(_timeslice) {
             console.log("Asteroid movement");

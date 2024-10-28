@@ -8,7 +8,7 @@ namespace Asteroid_Project {
         size: number;
 
         constructor(_size: number) {
-            console.log("asteroid constructor");
+            console.log("asteroid constructor"); //console.log to check if the method works
         }
 
         moveBy(_timeslice: number): void {
