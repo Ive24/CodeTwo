@@ -15,6 +15,9 @@ namespace Asteroid_Project {
         crc2.strokeStyle = "white";
 
         createPaths();
-        console.log("Asteroids paths", asteroidPaths); 
+        console.log("Asteroids paths", asteroidPaths);
+
+        const asteroid: Asteroid = new Asteroid(1); // = ist immer eine Zuweisung, der Konstante asteroid vom Typ Asteroid wird ein neu kreiertes Objekt zugewiesen mit der Größe 1
+        console.log(asteroid);
     }
 }

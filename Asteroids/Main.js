@@ -12,6 +12,8 @@ var Asteroid_Project;
         Asteroid_Project.crc2.strokeStyle = "white";
         Asteroid_Project.createPaths();
         console.log("Asteroids paths", Asteroid_Project.asteroidPaths);
+        const asteroid = new Asteroid_Project.Asteroid(1); // = ist immer eine Zuweisung, der Konstante asteroid vom Typ Asteroid wird ein neu kreiertes Objekt zugewiesen mit der Größe 1
+        console.log(asteroid);
     }
 })(Asteroid_Project || (Asteroid_Project = {}));
 //# sourceMappingURL=Main.js.map

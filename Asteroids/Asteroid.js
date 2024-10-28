@@ -4,8 +4,11 @@ var Asteroid_Project;
     class Asteroid {
         constructor(_size) {
             console.log("asteroid constructor"); //console.log to check if the method works
+            this.position = new Asteroid_Project.Vector(0, 0);
+            this.velocity =
+            ;
         }
-        moveBy(_timeslice) {
+        move(_timeslice) {
             console.log("Asteroid movement");
         }
         draw() {

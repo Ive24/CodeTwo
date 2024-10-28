@@ -9,9 +9,11 @@ namespace Asteroid_Project {
 
         constructor(_size: number) {
             console.log("asteroid constructor"); //console.log to check if the method works
+            this.position = new Vector (0,0);
+            this.velocity = 
         }
 
-        moveBy(_timeslice: number): void {
+        move(_timeslice: number): void {
             console.log("Asteroid movement")
         }
 

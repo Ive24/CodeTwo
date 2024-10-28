@@ -27,12 +27,6 @@ namespace FarmSimulation {
         // add a listner for a click event 
         window.addEventListener("click", macDonald.simulateDay); //.bind(macDonald)); an alternative to declare that the called function gets used with the wanted object
 
-        function loop(): void {
-            requestAnimationFrame(loop);
-        }
-
-        requestAnimationFrame(loop);
-
     }
 
 }
