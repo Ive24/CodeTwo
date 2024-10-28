@@ -6,9 +6,9 @@ namespace Asteroid_Project {
 
     function handleLoad(_event: Event): void { //Rückgabeparameter ist vom Typ Event
         console.log("Asteroids are starting.");
-        const canvas: HTMLCanvasElement | null = document.querySelector("canvas"); //  |
+        const canvas: HTMLCanvasElement | null = document.querySelector("canvas"); //  | bedeutet "oder", die Konstante canvas kann entweder
 
-        if (!canvas)
+        if (!canvas) // if(canvas == null), andere Schreibweise / ! bedeutet "nicht" und null wäre false / es steht sozusagen false ist gleich false hier 
             return;
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
         crc2.fillStyle = "black";

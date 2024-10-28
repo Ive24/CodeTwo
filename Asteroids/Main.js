@@ -4,8 +4,8 @@ var Asteroid_Project;
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         console.log("Asteroids are starting.");
-        const canvas = document.querySelector("canvas"); //  |
-        if (!canvas)
+        const canvas = document.querySelector("canvas"); //  | bedeutet "oder", die Konstante canvas kann entweder
+        if (!canvas) // if(canvas == null), andere Schreibweise / ! bedeutet "nicht" und null wäre false / es steht sozusagen false ist gleich false hier 
             return;
         Asteroid_Project.crc2 = canvas.getContext("2d");
         Asteroid_Project.crc2.fillStyle = "black";
