@@ -22,6 +22,17 @@ var Asteroid_Project;
         //canvas.addEventListner("mousemove", setHeading);
         window.setInterval(update, 20); //alle 20 Millisekunden/ 50 mal pro Sekunde wird die Methode update aufgerufen
     }
+    function shootLaser(_event) {
+        console.log("shoot laser");
+        const hotspot = new Asteroid_Project.Vector(_event.clientX - Asteroid_Project.crc2.canvas.offsetLeft, _event.clientY - Asteroid_Project.crc2.canvas.offsetTop); // hotspot, wo der Laser trifft
+        const asteroidHit = getAsteroidHit(hotspot);
+        if (asteroidHIt)
+            breakAsteroid(asteroidHit);
+    }
+    function getAsteroidHit(_hotspot) {
+        for (const asteroid of asteroids) {
+        }
+    }
     function createAsteroids(_nAsteroids) {
         console.log("create asteroids");
         for (let i = 0; i < _nAsteroids; i++) {

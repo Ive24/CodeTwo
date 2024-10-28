@@ -31,6 +31,20 @@ namespace Asteroid_Project {
         window.setInterval(update, 20); //alle 20 Millisekunden/ 50 mal pro Sekunde wird die Methode update aufgerufen
     }
 
+    function shootLaser(_event: MouseEvent): void {
+        console.log("shoot laser");
+        const hotspot: Vector = new Vector(_event.clientX - crc2.canvas.offsetLeft, _event.clientY - crc2.canvas.offsetTop); // hotspot, wo der Laser trifft
+        const asteroidHit: Asteroid | null = getAsteroidHit(hotspot);
+        if (asteroidHIt)
+            breakAsteroid(asteroidHit);
+    }
+
+    function getAsteroidHit(_hotspot: Vector): Asteroid | null {
+        for (const asteroid of asteroids) {
+
+        }
+    }
+
     function createAsteroids(_nAsteroids: number): void { //Schleife läuft fünf mal durch (siehe Zeile 23), jedes Mal wird ein neuer Asteroid erstellt
         console.log("create asteroids");
         for (let i: number = 0; i < _nAsteroids; i++) {
