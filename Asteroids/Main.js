@@ -31,7 +31,11 @@ var Asteroid_Project;
     }
     function getAsteroidHit(_hotspot) {
         for (const asteroid of asteroids) {
+            if (asteroid.isHit(_hotspot))
+                ;
+            return asteroid;
         }
+        return null;
     }
     function createAsteroids(_nAsteroids) {
         console.log("create asteroids");

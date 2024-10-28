@@ -41,8 +41,10 @@ namespace Asteroid_Project {
 
     function getAsteroidHit(_hotspot: Vector): Asteroid | null {
         for (const asteroid of asteroids) {
-
+            if (asteroid.isHit(_hotspot));
+                return asteroid;
         }
+        return null;
     }
 
     function createAsteroids(_nAsteroids: number): void { //Schleife läuft fünf mal durch (siehe Zeile 23), jedes Mal wird ein neuer Asteroid erstellt
