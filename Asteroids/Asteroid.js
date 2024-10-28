@@ -5,8 +5,8 @@ var Asteroid_Project;
         constructor(_size) {
             console.log("asteroid constructor"); //console.log to check if the method works
             this.position = new Asteroid_Project.Vector(0, 0);
-            this.velocity =
-            ;
+            this.velocity = new Asteroid_Project.Vector(0, 0);
+            this.velocity.random(100, 200); //Asteroiden sollen 100 bis 200 Pixel pro Sekunde fliegen können
         }
         move(_timeslice) {
             console.log("Asteroid movement");
