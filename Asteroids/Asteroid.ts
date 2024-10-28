@@ -23,6 +23,12 @@ namespace Asteroid_Project {
 
         draw(): void {
             console.log("Asteroid draw");
+            crc2.save(); // speichern der alten transformation
+            crc2.translate(this.position.x, this.position.y);
+            crc2.scale(this.size, this.size);
+            crc2.translate(-50, -50); // Verschiebung nach oben links damt er Asteroid um sein Zentrum gezeichnet wird und weniger von der Ecke aus
+            crc2.stroke(asteroidPaths[this.type]); //der zu dem typ gehörende Pfad soll gezeichnet werden
+            crc2.restore();
         }
 
     }

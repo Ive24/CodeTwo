@@ -15,6 +15,12 @@ var Asteroid_Project;
         }
         draw() {
             console.log("Asteroid draw");
+            Asteroid_Project.crc2.save(); // speichern der alten transformation
+            Asteroid_Project.crc2.translate(this.position.x, this.position.y);
+            Asteroid_Project.crc2.scale(this.size, this.size);
+            Asteroid_Project.crc2.translate(-50, -50); // Verschiebung nach oben links damt er Asteroid um sein Zentrum gezeichnet wird und weniger von der Ecke aus
+            Asteroid_Project.crc2.stroke(Asteroid_Project.asteroidPaths[this.type]); //der zu dem typ gehörende Pfad soll gezeichnet werden
+            Asteroid_Project.crc2.restore();
         }
     }
     Asteroid_Project.Asteroid = Asteroid;

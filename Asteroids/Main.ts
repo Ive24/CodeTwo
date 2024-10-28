@@ -12,12 +12,13 @@ namespace Asteroid_Project {
             return;
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
         crc2.fillStyle = "black";
-        crc2.strokeStyle = "white";
+        crc2.strokeStyle = "red";
 
         createPaths();
         console.log("Asteroids paths", asteroidPaths);
 
         const asteroid: Asteroid = new Asteroid(1); // = ist immer eine Zuweisung, der Konstante asteroid vom Typ Asteroid wird ein neu kreiertes Objekt zugewiesen mit der Größe 1
         console.log(asteroid);
+        asteroid.draw();
     }
 }
