@@ -11,21 +11,22 @@ var Asteroid_Project;
         Asteroid_Project.crc2 = canvas.getContext("2d");
         Asteroid_Project.crc2.fillStyle = "black";
         Asteroid_Project.crc2.strokeStyle = "white";
-        Asteroid_Project.crc2.fillRect(0, 0, Asteroid_Project.crc2.canvas.width, Asteroid_Project.crc2.canvas.height); //Background-color
+        // crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height); //Background-color
         Asteroid_Project.createPaths();
         console.log("Asteroids paths", Asteroid_Project.asteroidPaths);
         createAsteroids(5);
         //createShip();
-        //canvas.addEventListner("mousedown", loadLaser);
-        //canvas.addEventListner("mouseup", shootLaser);
-        //canvas.addEventListner("keypress", handleKeypress);
-        //canvas.addEventListner("mousemove", setHeading);
+        //canvas.addEventListener("mousedown", loadLaser);
+        canvas.addEventListener("mouseup", shootLaser);
+        //canvas.addEventListener("keypress", handleKeypress);
+        //canvas.addEventListener("mousemove", setHeading);
         window.setInterval(update, 20); //alle 20 Millisekunden/ 50 mal pro Sekunde wird die Methode update aufgerufen
     }
     function shootLaser(_event) {
         console.log("shoot laser");
         const hotspot = new Asteroid_Project.Vector(_event.clientX - Asteroid_Project.crc2.canvas.offsetLeft, _event.clientY - Asteroid_Project.crc2.canvas.offsetTop); // hotspot, wo der Laser trifft
         const asteroidHit = getAsteroidHit(hotspot);
+        console.log(asteroidHit);
         if (asteroidHit)
             breakAsteroid(asteroidHit);
     }

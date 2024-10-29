@@ -15,7 +15,7 @@ namespace Asteroid_Project {
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
         crc2.fillStyle = "black";
         crc2.strokeStyle = "white";
-        crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height); //Background-color
+        // crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height); //Background-color
 
         createPaths();
         console.log("Asteroids paths", asteroidPaths);
@@ -23,10 +23,10 @@ namespace Asteroid_Project {
         createAsteroids(5);
         //createShip();
 
-        //canvas.addEventListner("mousedown", loadLaser);
-        //canvas.addEventListner("mouseup", shootLaser);
-        //canvas.addEventListner("keypress", handleKeypress);
-        //canvas.addEventListner("mousemove", setHeading);
+        //canvas.addEventListener("mousedown", loadLaser);
+        canvas.addEventListener("mouseup", shootLaser);
+        //canvas.addEventListener("keypress", handleKeypress);
+        //canvas.addEventListener("mousemove", setHeading);
 
         window.setInterval(update, 20); //alle 20 Millisekunden/ 50 mal pro Sekunde wird die Methode update aufgerufen
     }
@@ -35,6 +35,7 @@ namespace Asteroid_Project {
         console.log("shoot laser");
         const hotspot: Vector = new Vector(_event.clientX - crc2.canvas.offsetLeft, _event.clientY - crc2.canvas.offsetTop); // hotspot, wo der Laser trifft
         const asteroidHit: Asteroid | null = getAsteroidHit(hotspot);
+        console.log(asteroidHit);
         if (asteroidHit)
             breakAsteroid(asteroidHit);
     }
