@@ -35,7 +35,7 @@ namespace Asteroid_Project {
         console.log("shoot laser");
         const hotspot: Vector = new Vector(_event.clientX - crc2.canvas.offsetLeft, _event.clientY - crc2.canvas.offsetTop); // hotspot, wo der Laser trifft
         const asteroidHit: Asteroid | null = getAsteroidHit(hotspot);
-        if (asteroidHIt)
+        if (asteroidHit)
             breakAsteroid(asteroidHit);
     }
 
@@ -49,7 +49,7 @@ namespace Asteroid_Project {
 
     function breakAsteroid(_asteroid: Asteroid): void {
         if (_asteroid.size > 0.3) {
-            for (const i: number = 0; i < 2; i++) {
+            for (let i: number = 0; i < 2; i++) {
                 const fragment: Asteroid = new Asteroid(_asteroid.size / 2, _asteroid.position); //der getroffene Asteroid wird in zwei neue Fragmente gespalten
                 fragment.velocity.add(_asteroid.velocity); //die Fragmente bekommen eine eigene Geschwindigkeit, abhängig von der ursprünglichen Geschwindigkeit
                 asteroids.push(fragment);

@@ -26,16 +26,26 @@ var Asteroid_Project;
         console.log("shoot laser");
         const hotspot = new Asteroid_Project.Vector(_event.clientX - Asteroid_Project.crc2.canvas.offsetLeft, _event.clientY - Asteroid_Project.crc2.canvas.offsetTop); // hotspot, wo der Laser trifft
         const asteroidHit = getAsteroidHit(hotspot);
-        if (asteroidHIt)
+        if (asteroidHit)
             breakAsteroid(asteroidHit);
     }
     function getAsteroidHit(_hotspot) {
         for (const asteroid of asteroids) {
-            if (asteroid.isHit(_hotspot))
-                ;
-            return asteroid;
+            if (asteroid.isHit(_hotspot)) //der Asteroid checkt, ob er getroffen wurde (er kennt seine Position, Form etc., das Hauptprogramm nicht)
+                return asteroid;
         }
         return null;
+    }
+    function breakAsteroid(_asteroid) {
+        if (_asteroid.size > 0.3) {
+            for (let i = 0; i < 2; i++) {
+                const fragment = new Asteroid_Project.Asteroid(_asteroid.size / 2, _asteroid.position); //der getroffene Asteroid wird in zwei neue Fragmente gespalten
+                fragment.velocity.add(_asteroid.velocity); //die Fragmente bekommen eine eigene Geschwindigkeit, abhängig von der ursprünglichen Geschwindigkeit
+                asteroids.push(fragment);
+            }
+        }
+        const index = asteroids.indexOf(_asteroid); //indexOf, schau an welcher Stelle im Array der Asteroid ist
+        asteroids.splice(index, 1); //splice, löscht ein Element aus dem Array (der getroffene Asteroid wird gelöscht und nur die neuen Fragmente bleiben bestehen)
     }
     function createAsteroids(_nAsteroids) {
         console.log("create asteroids");
