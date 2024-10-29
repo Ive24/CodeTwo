@@ -25,6 +25,9 @@ var Asteroid_Project;
             this.set(Math.cos(direction), Math.sin(direction));
             this.scale(length);
         }
+        copy() {
+            return new Vector(this.x, this.y);
+        }
     }
     Asteroid_Project.Vector = Vector;
 })(Asteroid_Project || (Asteroid_Project = {}));

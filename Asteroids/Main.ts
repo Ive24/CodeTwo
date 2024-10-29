@@ -2,6 +2,7 @@ namespace Asteroid_Project {
 
     window.addEventListener("load", handleLoad);
 
+    export const linewidth: number = 2;
     export let crc2: CanvasRenderingContext2D; //mit export deklarierte Variablen, Klassen und Funktionen können in anderen Files unter dem selben namespace genutzt werden
 
     const asteroids: Asteroid[] = [];
