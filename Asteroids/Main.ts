@@ -39,12 +39,24 @@ namespace Asteroid_Project {
             breakAsteroid(asteroidHit);
     }
 
-    function getAsteroidHit(_hotspot: Vector): Asteroid | null {
+    function getAsteroidHit(_hotspot: Vector): Asteroid | null { // null is a variable, but the value is like zero (no data/ value nothing)
         for (const asteroid of asteroids) {
-            if (asteroid.isHit(_hotspot));
+            if (asteroid.isHit(_hotspot)) //der Asteroid checkt, ob er getroffen wurde (er kennt seine Position, Form etc., das Hauptprogramm nicht)
                 return asteroid;
         }
         return null;
+    }
+
+    function breakAsteroid(_asteroid: Asteroid): void {
+        if (_asteroid.size > 0.3) {
+            for (const i: number = 0; i < 2; i++) {
+                const fragment: Asteroid = new Asteroid(_asteroid.size / 2, _asteroid.position); //der getroffene Asteroid wird in zwei neue Fragmente gespalten
+                fragment.velocity.add(_asteroid.velocity); //die Fragmente bekommen eine eigene Geschwindigkeit, abhängig von der ursprünglichen Geschwindigkeit
+                asteroids.push(fragment);
+            }
+        }
+        const index: number = asteroids.indexOf(_asteroid); //indexOf, schau an welcher Stelle im Array der Asteroid ist
+        asteroids.splice(index, 1); //splice, löscht ein Element aus dem Array (der getroffene Asteroid wird gelöscht und nur die neuen Fragmente bleiben bestehen)
     }
 
     function createAsteroids(_nAsteroids: number): void { //Schleife läuft fünf mal durch (siehe Zeile 23), jedes Mal wird ein neuer Asteroid erstellt
