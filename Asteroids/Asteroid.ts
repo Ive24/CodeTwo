@@ -55,5 +55,9 @@ namespace Asteroid_Project {
             return (Math.abs(difference.x) < hitsize && Math.abs(difference.y) < hitsize); // abs, absolut (ohne Vorzeichen)
         }
 
+        copy(_position: Vector, _velocity: Vector, _type: number, _size: number): Asteroid {
+            
+        }
+
     }
 }
