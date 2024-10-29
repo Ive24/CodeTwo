@@ -42,8 +42,6 @@ var Asteroid_Project;
             const difference = new Asteroid_Project.Vector(_hotspot.x - this.position.x, _hotspot.y - this.position.y); //sozusagen eine Collisionbox
             return (Math.abs(difference.x) < hitsize && Math.abs(difference.y) < hitsize); // abs, absolut (ohne Vorzeichen)
         }
-        copy(_position, _velocity, _type, _size) {
-        }
     }
     Asteroid_Project.Asteroid = Asteroid;
 })(Asteroid_Project || (Asteroid_Project = {}));
