@@ -3,7 +3,7 @@ var FarmSimulation;
 (function (FarmSimulation) {
     class Cat extends FarmSimulation.Animal {
         dospecialAction() {
-            console.log("eat even more");
+            console.log("catch mouse");
         }
     }
     FarmSimulation.Cat = Cat;
