@@ -19,10 +19,6 @@ var FarmSimulation;
         const macDonald = new FarmSimulation.Farm(stableMacDonald, pantryMacDonald);
         // add a listner for a click event 
         window.addEventListener("click", macDonald.simulateDay); //.bind(macDonald)); an alternative to declare that the called function gets used with the wanted object
-        function loop() {
-            requestAnimationFrame(loop);
-        }
-        requestAnimationFrame(loop);
     }
 })(FarmSimulation || (FarmSimulation = {}));
 //# sourceMappingURL=main.js.map
