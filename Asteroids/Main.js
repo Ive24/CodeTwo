@@ -2,7 +2,7 @@
 var Asteroid_Project;
 (function (Asteroid_Project) {
     window.addEventListener("load", handleLoad);
-    Asteroid_Project.linewidth = 2;
+    Asteroid_Project.widthLine = 2;
     const asteroids = [];
     function handleLoad(_event) {
         console.log("Asteroids are starting.");

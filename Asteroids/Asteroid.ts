@@ -44,7 +44,7 @@ namespace Asteroid_Project {
             crc2.translate(this.position.x, this.position.y);
             crc2.scale(this.size, this.size);
             crc2.translate(-50, -50); // Verschiebung nach oben links damt er Asteroid um sein Zentrum gezeichnet wird und weniger von der Ecke aus
-            crc2.lineWidth = linewidth / this.size;
+            crc2.lineWidth = widthLine / this.size;
             crc2.stroke(asteroidPaths[this.type]); //der zu dem typ gehörende Pfad soll gezeichnet werden
             crc2.restore();
         }
