@@ -33,5 +33,9 @@ namespace Asteroid_Project {
             this.scale(length);
         }
 
+        copy(): Vector {
+            return new Vector(this.x, this.y);
+        }
+
     }
 }
