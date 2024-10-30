@@ -13,7 +13,7 @@ namespace FarmSimulation {
 
         pantryMacDonald.push(meat, hay, corn);
 
-        const cat: Cat = new Cat("Cat", "Maurizius", "Miau", pantryMacDonald[0], 1);
+        const cat: Cat = new Cat("Cat", "Maurizius", "Miau", pantryMacDonald[0], 1, "orange", true);
         const dog: Animal = new Animal("Dog", "Milo", "Wouff", pantryMacDonald[0], 2);
         const horse: Animal = new Animal("Horse", "Schattenfell", "Hüh", pantryMacDonald[1], 4);
         const cow: Animal = new Animal("Cow", "Beatrice", "Muh", pantryMacDonald[2], 5);

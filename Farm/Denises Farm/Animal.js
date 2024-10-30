@@ -22,22 +22,5 @@ var FarmSimulation;
         }
     }
     FarmSimulation.Animal = Animal;
-    class Cat extends Animal {
-        constructor(_furrcolor, _friendly) {
-            super(); //call superclass constructor 
-            this.furrcolor = _furrcolor;
-            this.friendly = _friendly;
-        }
-        dospecialAction() {
-            console.log("catch mouse");
-        }
-    }
-    FarmSimulation.Cat = Cat;
-    class Dog extends Animal {
-        dospecialAction() {
-            console.log("Trick");
-        }
-    }
-    FarmSimulation.Dog = Dog;
 })(FarmSimulation || (FarmSimulation = {}));
 //# sourceMappingURL=Animal.js.map

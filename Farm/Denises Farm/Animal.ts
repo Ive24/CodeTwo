@@ -32,28 +32,6 @@ namespace FarmSimulation {
             console.log(verse1);
         }
     }
-
-    export class Cat extends Animal {
-
-        furrcolor: string;
-        friendly: boolean;
-
-        constructor(_furrcolor: string, _friendly: boolean) {
-            super(); //call superclass constructor 
-            this.furrcolor = _furrcolor;
-            this.friendly = _friendly;
-        }
-
-        dospecialAction(): void {
-            console.log("catch mouse");
-        }
-    }
-
-    export class Dog extends Animal {
-
-        dospecialAction(): void {
-            console.log("Trick");
-        }
-    }
+    
 }
 
