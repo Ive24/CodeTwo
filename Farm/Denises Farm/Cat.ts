@@ -12,7 +12,7 @@ namespace FarmSimulation {
         }
 
         dospecialAction(): void {
-            console.log("catch mouse");
+            console.log("I have" + this.furrcolor + "furr.");
         }
     }
 }

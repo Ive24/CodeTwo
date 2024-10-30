@@ -8,7 +8,7 @@ var FarmSimulation;
             this.friendly = _friendly;
         }
         dospecialAction() {
-            console.log("catch mouse");
+            console.log("I have" + this.furrcolor + "furr.");
         }
     }
     FarmSimulation.Cat = Cat;
