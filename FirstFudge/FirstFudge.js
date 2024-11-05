@@ -31,6 +31,7 @@ var FirstFudge;
         viewport.draw();
     }
     function moveCube() {
+        console.log("move cube");
     }
 })(FirstFudge || (FirstFudge = {}));
 //# sourceMappingURL=FirstFudge.js.map

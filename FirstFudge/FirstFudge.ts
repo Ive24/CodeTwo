@@ -43,6 +43,6 @@ namespace FirstFudge {
     }
 
     function moveCube(): void {
-
+        console.log("move cube");
     }
 }
