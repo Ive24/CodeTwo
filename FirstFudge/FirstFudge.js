@@ -38,9 +38,10 @@ var FirstFudge;
         const frameTimeInMilliSeconds = f.Loop.timeFrameGame; //Millisecond
         const frameTimeInSeconds = (frameTimeInMilliSeconds / 1000);
         const degrees = 360 * frameTimeInSeconds; //amount of degree that we want to move in one second
-        //node.addComponent()
+        node.mtxLocal.translateX(-0.001, false);
+        //if ()
         console.log(degrees);
-        node.mtxLocal.rotateY(1);
+        node.mtxLocal.rotateY(1, false);
         globalViewport.draw();
     }
 })(FirstFudge || (FirstFudge = {}));

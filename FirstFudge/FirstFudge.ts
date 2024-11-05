@@ -48,14 +48,17 @@ namespace FirstFudge {
     }
 
     function moveCube(): void {
+
         const frameTimeInMilliSeconds: number = f.Loop.timeFrameGame; //Millisecond
         const frameTimeInSeconds: number = (frameTimeInMilliSeconds / 1000);
         const degrees: number = 360 * frameTimeInSeconds; //amount of degree that we want to move in one second
 
-        //node.addComponent()
+        node.mtxLocal.translateX(-0.001, false);
+        //if ()
+
 
         console.log(degrees);
-        node.mtxLocal.rotateY(1);
+        node.mtxLocal.rotateY(1, false);
         globalViewport.draw();
     }
 }
