@@ -1,0 +1,73 @@
+{
+    "name": "Sun",
+    "info": "sunInfo",
+    "text": "sunText",
+    "color": "yellow",
+    "radius": 40,
+    "rotAngle": 120,
+    "speedFactor": 0,
+    "distanceFromCenter": 700,
+    "children": [
+        { "name": "Mercury", "color": "orange", "radius": 8, "rotAngle": 0, "speedFactor": 4.1, "distanceFromCenter": 70, "children": [] },
+
+        { "name": "Venus", "color": "#dce65e", "radius": 10, "rotAngle": 0, "speedFactor": 1.6, "distanceFromCenter": 110, "children": [] },
+
+        {
+            "name": "Earth", "color": "blue", "radius": 10, "rotAngle": 0, "speedFactor": 1, "distanceFromCenter": 180,
+            "children": [
+                { "name": "Moon", "color": "white", "radius": 5, "rotAngle": 0, "speedFactor": 13, "distanceFromCenter": 20, "children": [] }
+            ]
+        },
+
+        {
+            "name": "Mars", "color": "#d14217", "radius": 10, "rotAngle": 0, "speedFactor": 0.53, "distanceFromCenter": 230,
+            "children": [
+                { "name": "Phobos", "color": "grey", "radius": 3, "rotAngle": 0, "speedFactor": 1216.6, "distanceFromCenter": 20, "children": [] },
+                { "name": "Deimos", "color": "white", "radius": 3, "rotAngle": 0, "speedFactor": 304.2, "distanceFromCenter": 30, "children": [] }
+            ]
+
+        },
+
+        {
+            "name": "Jupiter", "color": "#de8745", "radius": 30, "rotAngle": 0, "speedFactor": 0.08, "distanceFromCenter": 300,
+            "children": [
+                { "name": "Io","color": "white", "radius": 5, "rotAngle": 0, "speedFactor": 202, "distanceFromCenter": 40, "children": [] },
+                { "name": "Europe", "color": "grey", "radius": 5, "rotAngle": 0, "speedFactor": 104, "distanceFromCenter": 53, "children": [] },
+                { "name": "Ganymede", "color": "white", "radius": 5, "rotAngle": 0, "speedFactor": 51.5, "distanceFromCenter": 66, "children": [] },
+                { "name": "Callisto", "color": "grey", "radius": 5, "rotAngle": 0, "speedFactor": 21.8, "distanceFromCenter": 81, "children": [] }
+            ]
+        },
+
+        {
+            "name": "Saturn", "color": "#ebc681", "radius": 20, "rotAngle": 0, "speedFactor": 0.03, "distanceFromCenter": 380,
+            "children": [
+                { "name": "Titan", "color": "white", "radius": 4, "rotAngle": 0, "speedFactor": 22.8, "distanceFromCenter": 35, "children": [] },
+                { "name": "Prometheus",  "color": "grey", "radius": 4, "rotAngle": 0, "speedFactor": 598.4, "distanceFromCenter": 50, "children": [] }
+            ]
+        },
+
+        {
+            "name": "Uranus", "color": "#cfdfe6", "radius": 20, "rotAngle": 0, "speedFactor": 0.01, "distanceFromCenter": 420,
+            "children": [
+                { "name": "Oberon", "color": "grey", "radius": 4, "rotAngle": 0, "speedFactor": 27.1, "distanceFromCenter": 20, "children": [] },
+                { "name": "Titania", "color": "white", "radius": 4, "rotAngle": 0, "speedFactor": 42, "distanceFromCenter": 30, "children": [] }
+            ]
+        },
+
+        {
+            "name": "Neptun", "color": "#b3d6e6", "radius": 15, "rotAngle": 0, "speedFactor": 0.006, "distanceFromCenter": 470,
+            "children": [
+                { "name": "Triton", "color": "grey", "radius": 4, "rotAngle": 0, "speedFactor": 63, "distanceFromCenter": 25, "children": [] }
+            ]
+        },
+
+        {
+            "name": "Pluto", "color": "grey", "radius": 5, "rotAngle": 0, "speedFactor": 0.004, "distanceFromCenter": 510,
+            "children": [
+                { "name": "Charon", "color": "white", "radius": 3, "rotAngle": 0, "speedFactor": 57, "distanceFromCenter": 15, "children": [] }
+            ]
+        }
+
+    ]
+
+}

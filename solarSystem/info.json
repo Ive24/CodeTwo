@@ -1,0 +1,33 @@
+{
+    "Sun": {
+        "info": "Diameter: 1.392.700 km <br> Surface temperature: 5498°C / 5772K <br> Core temperature: 15,6 mil. K ",
+        "text": "The center of our solar system also holds over 99% of its mass, with half of that mass being held by only 1,5% of the sun's volume in its core. In mythology, the sun has always been revered and sometimes feared for the power it holds over human life, being our primary source of light, warmth and being our oldest way to tell time."
+    },
+
+    "Mercury": {
+        "info": "Diameter: 4878 km <br> Orbital period: 88 earth days <br> Mean orbital speed: 47,36 km/s <br> Max surface temperature: 427°C / 700K <br> Min surface temperature: -170°C / 100K <br> Moons: 0" ,
+        "text": "b"
+    },
+
+    "Venus": {
+        "info": "a",
+        "text": "b"
+    },
+
+    "Earth": {
+        "info": "a",
+        "text": "b"
+    },
+
+    "Moon": {
+        "info": "a",
+        "text": "b"
+    },
+
+    "Mars": {
+        "info": "a" ,
+        "text": "b"
+    }
+
+
+}
