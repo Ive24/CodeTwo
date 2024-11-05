@@ -4,6 +4,8 @@ var FirstFudge;
     var f = FudgeCore;
     console.log(f);
     window.addEventListener("load", start); //add a event Listener to the window to load the canvas before executing the script 
+    const node = new f.Node("Node");
+    let globalViewport = new f.Viewport();
     f.Loop.addEventListener("loopFrame" /* f.EVENT.LOOP_FRAME */, moveCube);
     function start() {
         const canvas = document.querySelector("canvas");
@@ -12,7 +14,6 @@ var FirstFudge;
         console.log(mesh);
         const camera = new f.ComponentCamera();
         console.log(camera);
-        const node = new f.Node("Node");
         const compMesh = new f.ComponentMesh(mesh);
         node.addComponent(compMesh);
         const material = new f.Material("Material", f.ShaderLit);
@@ -29,9 +30,16 @@ var FirstFudge;
         const viewport = new f.Viewport();
         viewport.initialize("Viewport", node, camera, canvas);
         viewport.draw();
+        globalViewport = viewport;
+        f.Loop.start();
     }
     function moveCube() {
-        console.log("move cube");
+        const frameTimeInMilliSeconds = f.Loop.timeFrameGame; //Millisecond
+        const frameTimeInSeconds = (frameTimeInMilliSeconds / 1000);
+        const degrees = 360 * frameTimeInSeconds; //amount of degree that we want to move in one second
+        console.log(degrees);
+        node.mtxLocal.rotateY(1);
+        globalViewport.draw();
     }
 })(FirstFudge || (FirstFudge = {}));
 //# sourceMappingURL=FirstFudge.js.map
