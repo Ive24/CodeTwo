@@ -1,6 +1,7 @@
 "use strict";
 var FirstFudge;
 (function (FirstFudge) {
-    console.log(FudgeCore);
+    var f = FudgeCore;
+    console.log(f);
 })(FirstFudge || (FirstFudge = {}));
 //# sourceMappingURL=FirstFudge.js.map

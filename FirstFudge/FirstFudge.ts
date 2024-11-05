@@ -1,4 +1,4 @@
 namespace FirstFudge {
     import f = FudgeCore;
-    console.log(FudgeCore);
+    console.log(f);
 }
