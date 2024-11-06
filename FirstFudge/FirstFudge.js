@@ -4,13 +4,22 @@ var FirstFudge;
     var f = FudgeCore;
     console.log(f);
     window.addEventListener("load", start); //add a event Listener to the window to load the canvas before executing the script 
-    const car = new f.Node("Node");
     const ground = new f.Node("Ground");
+    const car = new f.Node("Node");
     ground.addChild(car);
     let viewport;
     f.Loop.addEventListener("loopFrame" /* f.EVENT.LOOP_FRAME */, moveCube);
     function start() {
         const canvas = document.querySelector("canvas");
+        //ground-node
+        const groundMesh = new f.MeshQuad("Ground");
+        const cmpGroundMesh = new f.ComponentMesh(groundMesh);
+        cmpGroundMesh.mtxPivot.rotateX(-90);
+        cmpGroundMesh.mtxPivot.scale(new f.Vector3(50, 50, 50));
+        ground.addComponent(cmpGroundMesh);
+        const materialGround = new f.Material("MaterialGround", f.ShaderLitTextured);
+        const compMaterialGround = new f.ComponentMaterial(materialGround);
+        ground.addComponent(compMaterialGround);
         //car-node 
         const mesh = new f.MeshCube("Mesh");
         const compMesh = new f.ComponentMesh(mesh);
@@ -24,26 +33,17 @@ var FirstFudge;
         car.getComponent(f.ComponentTransform).mtxLocal.translateX(2);
         //the shortcut to line above: node.mtxLocal.translateX(2);
         //another version is to save it in a variable first const compTransform: f.ComponentTransform = new f.ComponentTransform(); node.addComponent(compTransform);
-        //ground-node
-        const groundMesh = new f.MeshQuad("Ground");
-        const cmpGroundMesh = new f.ComponentMesh(groundMesh);
-        cmpGroundMesh.mtxPivot.rotateX(-45);
-        cmpGroundMesh.mtxPivot.scale(new f.Vector3(50, 50, 0));
-        ground.addComponent(cmpGroundMesh);
-        const materialGround = new f.Material("MaterialGround", f.ShaderLitTextured);
-        const compMaterialGround = new f.ComponentMaterial(materialGround);
-        ground.addComponent(compMaterialGround);
         //Viewport and camera
         const camera = new f.ComponentCamera();
         camera.mtxPivot.translateZ(25);
         camera.mtxPivot.rotateY(180);
-        // camera.mtxPivot.translateY(15);
-        // camera.mtxPivot.rotateX(45);
+        camera.mtxPivot.translateY(15);
+        camera.mtxPivot.rotateX(45);
         viewport = new f.Viewport();
         viewport.initialize("Viewport", ground, camera, canvas);
         viewport.draw();
         f.Loop.start(f.LOOP_MODE.TIME_GAME, 5);
-        f.Time.game.setScale(2);
+        f.Time.game.setScale(5);
     }
     function moveCube() {
         const tSpeed = 1 / 1;
