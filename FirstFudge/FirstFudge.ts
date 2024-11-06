@@ -6,7 +6,7 @@ namespace FirstFudge {
     window.addEventListener("load", start); //add a event Listener to the window to load the canvas before executing the script 
 
     const node: f.Node = new f.Node("Node");
-    let globalViewport: f.Viewport = new f.Viewport();
+    let viewport: f.Viewport;
 
     f.Loop.addEventListener(f.EVENT.LOOP_FRAME, moveCube);
 
@@ -38,10 +38,9 @@ namespace FirstFudge {
 
         console.log(node);
 
-        const viewport: f.Viewport = new f.Viewport();
+        viewport = new f.Viewport();
         viewport.initialize("Viewport", node, camera, canvas);
         viewport.draw();
-        globalViewport = viewport;
 
         f.Loop.start(f.LOOP_MODE.TIME_GAME, 5);
         f.Time.game.setScale(50);
@@ -49,16 +48,26 @@ namespace FirstFudge {
 
     function moveCube(): void {
 
+        const tSpeed: number = 1 / 1;
+        const rSpeed: number = 360 / 1;
         const frameTimeInMilliSeconds: number = f.Loop.timeFrameGame; //Millisecond
         const frameTimeInSeconds: number = (frameTimeInMilliSeconds / 1000);
-        const degrees: number = 360 * frameTimeInSeconds; //amount of degree that we want to move in one second
+        // const degrees: number = 360 * frameTimeInSeconds; //amount of degree that we want to move in one second
 
         node.mtxLocal.translateX(-0.001, false);
-        //if ()
 
-
-        console.log(degrees);
+        // console.log(degrees);
         node.mtxLocal.rotateY(1, false);
-        globalViewport.draw();
+
+        if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.W]))
+            node.mtxLocal.translateZ(tSpeed * frameTimeInSeconds);
+        if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.S]))
+            node.mtxLocal.translateZ(-tSpeed * frameTimeInSeconds);
+
+        if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.A]))
+            node.mtxLocal.translateZ(rSpeed * frameTimeInSeconds, false);
+        if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.D]))
+            node.mtxLocal.translateZ(-rSpeed * frameTimeInSeconds, false); //false: bedeutet hier, dass er sich, um das Weltsystem drehen soll (true wäre das lokale)
+        viewport.draw();
     }
 }

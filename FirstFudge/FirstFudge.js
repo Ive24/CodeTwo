@@ -5,7 +5,7 @@ var FirstFudge;
     console.log(f);
     window.addEventListener("load", start); //add a event Listener to the window to load the canvas before executing the script 
     const node = new f.Node("Node");
-    let globalViewport = new f.Viewport();
+    let viewport;
     f.Loop.addEventListener("loopFrame" /* f.EVENT.LOOP_FRAME */, moveCube);
     function start() {
         const canvas = document.querySelector("canvas");
@@ -27,22 +27,30 @@ var FirstFudge;
         //the shortcut to line above: node.mtxLocal.translateX(2);
         //another version is to save it in a variable first const compTransform: f.ComponentTransform = new f.ComponentTransform(); node.addComponent(compTransform);
         console.log(node);
-        const viewport = new f.Viewport();
+        viewport = new f.Viewport();
         viewport.initialize("Viewport", node, camera, canvas);
         viewport.draw();
-        globalViewport = viewport;
         f.Loop.start(f.LOOP_MODE.TIME_GAME, 5);
         f.Time.game.setScale(50);
     }
     function moveCube() {
+        const tSpeed = 1 / 1;
+        const rSpeed = 360 / 1;
         const frameTimeInMilliSeconds = f.Loop.timeFrameGame; //Millisecond
         const frameTimeInSeconds = (frameTimeInMilliSeconds / 1000);
-        const degrees = 360 * frameTimeInSeconds; //amount of degree that we want to move in one second
+        // const degrees: number = 360 * frameTimeInSeconds; //amount of degree that we want to move in one second
         node.mtxLocal.translateX(-0.001, false);
-        //if ()
-        console.log(degrees);
+        // console.log(degrees);
         node.mtxLocal.rotateY(1, false);
-        globalViewport.draw();
+        if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.W]))
+            node.mtxLocal.translateZ(tSpeed * frameTimeInSeconds);
+        if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.S]))
+            node.mtxLocal.translateZ(-tSpeed * frameTimeInSeconds);
+        if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.A]))
+            node.mtxLocal.translateZ(rSpeed * frameTimeInSeconds, false);
+        if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.D]))
+            node.mtxLocal.translateZ(-rSpeed * frameTimeInSeconds, false); //false: bedeutet hier, dass er sich, um das Weltsystem drehen soll (true wäre das lokale)
+        viewport.draw();
     }
 })(FirstFudge || (FirstFudge = {}));
 //# sourceMappingURL=FirstFudge.js.map
