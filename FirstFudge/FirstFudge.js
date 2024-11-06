@@ -31,7 +31,7 @@ var FirstFudge;
         viewport.initialize("Viewport", node, camera, canvas);
         viewport.draw();
         f.Loop.start(f.LOOP_MODE.TIME_GAME, 5);
-        f.Time.game.setScale(50);
+        f.Time.game.setScale(5);
     }
     function moveCube() {
         const tSpeed = 1 / 1;
@@ -47,9 +47,9 @@ var FirstFudge;
         if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.S]))
             node.mtxLocal.translateZ(-tSpeed * frameTimeInSeconds);
         if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.A]))
-            node.mtxLocal.translateZ(rSpeed * frameTimeInSeconds, false);
+            node.mtxLocal.rotateY(rSpeed * frameTimeInSeconds);
         if (f.Keyboard.isPressedOne([f.KEYBOARD_CODE.D]))
-            node.mtxLocal.translateZ(-rSpeed * frameTimeInSeconds, false); //false: bedeutet hier, dass er sich, um das Weltsystem drehen soll (true wäre das lokale)
+            node.mtxLocal.rotateY(-rSpeed * frameTimeInSeconds); //false: bedeutet hier, dass er sich, um das Weltsystem drehen soll (true wäre das lokale)
         viewport.draw();
     }
 })(FirstFudge || (FirstFudge = {}));
