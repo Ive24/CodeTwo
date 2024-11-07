@@ -14,8 +14,6 @@ var SolarSystemFudge;
         const camera = new SolarSystemFudge.f.ComponentCamera();
         camera.mtxPivot.translateZ(25);
         camera.mtxPivot.rotateY(180);
-        camera.mtxPivot.translateY(15);
-        camera.mtxPivot.rotateX(45);
         viewport = new SolarSystemFudge.f.Viewport();
         viewport.initialize("Viewport", body, camera, canvas);
         viewport.draw();
@@ -25,7 +23,7 @@ var SolarSystemFudge;
         SolarSystemFudge.f.Loop.addEventListener("loopFrame" /* f.EVENT.LOOP_FRAME */, update);
     }
     function update() {
-        viewport.draw();
+        //viewport.draw();
     }
 })(SolarSystemFudge || (SolarSystemFudge = {}));
 //# sourceMappingURL=solarSystemFudge.js.map

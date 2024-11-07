@@ -9,8 +9,8 @@ var SolarSystemFudge;
             this.vRotation = 0;
             this.name = _name;
             this.size = _size;
-            this.cmpMesh = new SolarSystemFudge.f.ComponentMesh(Body.mesh);
-            this.cmpMaterial = new SolarSystemFudge.f.ComponentMaterial(Body.material);
+            this.addComponent(new SolarSystemFudge.f.ComponentMesh(Body.mesh));
+            this.addComponent(new SolarSystemFudge.f.ComponentMaterial(Body.material));
             this.addComponent(new SolarSystemFudge.f.ComponentTransform());
         }
         setTransforms(_velocityOrbit, _vRotation, _distance) {

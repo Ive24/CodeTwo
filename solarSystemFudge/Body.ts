@@ -12,16 +12,14 @@ namespace SolarSystemFudge {
         private distance: number = 0;
         private velocityOrbit: number = 0;
         private vRotation: number = 0;
-        private cmpMesh: f.ComponentMesh;
-        private cmpMaterial: f.ComponentMaterial;
 
         public constructor(_name: string, _size: number, _color: string) {
             super(_name);
             this.name = _name;
             this.size = _size;
 
-            this.cmpMesh = new f.ComponentMesh(Body.mesh);
-            this.cmpMaterial = new f.ComponentMaterial(Body.material);
+            this.addComponent(new f.ComponentMesh(Body.mesh));
+            this.addComponent(new f.ComponentMaterial(Body.material));
             this.addComponent(new f.ComponentTransform());
 
         }

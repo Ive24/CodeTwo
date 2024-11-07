@@ -20,8 +20,6 @@ namespace SolarSystemFudge {
 
         camera.mtxPivot.translateZ(25);
         camera.mtxPivot.rotateY(180);
-        camera.mtxPivot.translateY(15);
-        camera.mtxPivot.rotateX(45);
 
         viewport = new f.Viewport();
         viewport.initialize("Viewport", body, camera, canvas);
@@ -36,6 +34,6 @@ namespace SolarSystemFudge {
 
     function update(): void {
 
-        viewport.draw();
+        //viewport.draw();
     }
 }
