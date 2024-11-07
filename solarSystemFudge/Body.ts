@@ -1,4 +1,5 @@
 namespace SolarSystemFudge {
+    export import f = FudgeCore;
 
     export class Body extends f.Node {
 
@@ -8,20 +9,44 @@ namespace SolarSystemFudge {
         // public position: f.Vector3;
         // public name: string;
 
+        public rotationNode: f.Node;
+
         private size: number;
         private distance: number = 0;
         private velocityOrbit: number = 0;
         private vRotation: number = 0;
 
-        public constructor(_name: string, _size: number, _color: string) {
+        public constructor(_name: string, _size: number, _distance: number, _velocityOrbit: number, _color: string) {
             super(_name);
             this.name = _name;
             this.size = _size;
+            this.velocityOrbit = _velocityOrbit;
+
+            this.rotationNode = new f.Node(_name + "Rotation Node");
+            this.rotationNode.addComponent(new f.ComponentTransform());
+            this.rotationNode.addChild(this);
+
+            const tempMat: f.ComponentMaterial = new f.ComponentMaterial(Body.material);
+            tempMat.clrPrimary.setCSS(_color);
 
             this.addComponent(new f.ComponentMesh(Body.mesh));
-            this.addComponent(new f.ComponentMaterial(Body.material));
+            this.addComponent(tempMat);
             this.addComponent(new f.ComponentTransform());
 
+            this.mtxLocal.translateX(_distance);
+
+        }
+
+        public step(): void {
+            this.rotationNode.mtxLocal.rotateY(this.velocityOrbit);
+
+            const c: f.Node = this.getChild(0);
+
+            if (c) {
+                for (const bn of c.getChildren()) {
+                    (bn as Body).step();
+                }
+            }
         }
 
         public setTransforms(_velocityOrbit: number, _vRotation: number, _distance: number): void {
