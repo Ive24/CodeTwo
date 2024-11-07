@@ -85,8 +85,10 @@ namespace FirstFudge {
             car.mtxLocal.rotateY(-rSpeed * frameTimeInSeconds); //false: bedeutet hier, dass er sich, um das Weltsystem drehen soll (true wäre das lokale)
 
 
+        const up: f.Vector3 = f.Vector3.Y();
         viewport.camera.mtxPivot.lookAt(car.mtxWorld.translation, f.Vector3.Y()); // world matrix: the absolute position in the world 
         // viewport.camera.mtxPivot.lookAt(new f.Vector3(0, 0, 0)); //viewport knows the camera 
+        f.Recycler.store(up);
 
         viewport.draw();
     }
