@@ -15,7 +15,7 @@ namespace SolarSystemFudge {
         private cmpMesh: f.ComponentMesh;
         private cmpMaterial: f.ComponentMaterial;
 
-        public constructor(_name: string, _size: number) {
+        public constructor(_name: string, _size: number, _color: string) {
             super(_name);
             this.name = _name;
             this.size = _size;

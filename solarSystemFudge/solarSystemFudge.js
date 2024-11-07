@@ -6,6 +6,9 @@ var SolarSystemFudge;
     const sun = new SolarSystemFudge.f.Node("Sun");
     let viewport;
     function start() {
+        // nodes 
+        const body = new SolarSystemFudge.Body("Sun", 1, "yellow");
+        console.log("body");
         // viewport and camera
         const canvas = document.querySelector("canvas");
         const camera = new SolarSystemFudge.f.ComponentCamera();
@@ -14,7 +17,7 @@ var SolarSystemFudge;
         camera.mtxPivot.translateY(15);
         camera.mtxPivot.rotateX(45);
         viewport = new SolarSystemFudge.f.Viewport();
-        viewport.initialize("Viewport", ground, camera, canvas);
+        viewport.initialize("Viewport", body, camera, canvas);
         viewport.draw();
         SolarSystemFudge.f.Loop.start(SolarSystemFudge.f.LOOP_MODE.TIME_GAME, 5);
         SolarSystemFudge.f.Time.game.setScale(5);

@@ -2,7 +2,7 @@
 var SolarSystemFudge;
 (function (SolarSystemFudge) {
     class Body extends SolarSystemFudge.f.Node {
-        constructor(_name, _size) {
+        constructor(_name, _size, _color) {
             super(_name);
             this.distance = 0;
             this.velocityOrbit = 0;

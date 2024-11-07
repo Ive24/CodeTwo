@@ -1,33 +1,38 @@
 namespace SolarSystemFudge {
-   export import f = FudgeCore;
+    export import f = FudgeCore;
 
-   window.addEventListener("load", start);
+    window.addEventListener("load", start);
 
-   const sun: f.Node = new f.Node("Sun");
-   let viewport: f.Viewport;
+    const sun: f.Node = new f.Node("Sun");
+    let viewport: f.Viewport;
 
-   function start(): void{
+    function start(): void {
 
-    // viewport and camera
-       const canvas: HTMLCanvasElement = document.querySelector("canvas")!;
+        // nodes 
+        const body: Body = new Body("Sun", 1, "yellow");
+        console.log("body");
 
-       const camera: f.ComponentCamera = new f.ComponentCamera();
 
-       camera.mtxPivot.translateZ(25);
-       camera.mtxPivot.rotateY(180);
-       camera.mtxPivot.translateY(15);
-       camera.mtxPivot.rotateX(45);
+        // viewport and camera
+        const canvas: HTMLCanvasElement = document.querySelector("canvas")!;
 
-       viewport = new f.Viewport();
-       viewport.initialize("Viewport", ground, camera, canvas);
-       viewport.draw();
+        const camera: f.ComponentCamera = new f.ComponentCamera();
 
-       f.Loop.start(f.LOOP_MODE.TIME_GAME, 5);
-       f.Time.game.setScale(5);
+        camera.mtxPivot.translateZ(25);
+        camera.mtxPivot.rotateY(180);
+        camera.mtxPivot.translateY(15);
+        camera.mtxPivot.rotateX(45);
 
-       //update
-       f.Loop.addEventListener(f.EVENT.LOOP_FRAME, update);
-   }
+        viewport = new f.Viewport();
+        viewport.initialize("Viewport", body, camera, canvas);
+        viewport.draw();
+
+        f.Loop.start(f.LOOP_MODE.TIME_GAME, 5);
+        f.Time.game.setScale(5);
+
+        //update
+        f.Loop.addEventListener(f.EVENT.LOOP_FRAME, update);
+    }
 
     function update(): void {
 
