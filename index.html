@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pages</title>
+<title>CodeTwo</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="styles.css" />
+
+<!--Editor settings of this project-->
+<meta type="settings" autoview="" project="{'name':'CodeTwo','graphAutoView':''}" />
+
+<!--Activate the following line to include the FUDGE-version of Oimo-Physics. You may want to download a local copy to work offline and be independent from future changes!-->
+<!--<script type="text/javascript" src="https://hs-furtwangen.github.io/FUDGE/Distribution/OimoPhysics.js"></script>-->
+
+<!--Load FUDGE. You may want to download local copies to work offline and be independent from future changes! Developers working on FUDGE itself may want to create symlinks-->
+<script type="text/javascript" src="https://hs-furtwangen.github.io/FUDGE/Distribution/FudgeCore.js"></script>
+<script type="text/javascript" src="https://hs-furtwangen.github.io/FUDGE/Distribution/FudgeAid.js"></script>
+
+<!--Link internal resources. The editor only loads the first, but at runtime, multiple files can contribute-->
+<link type="resources" src="Internal.json" />
+
+<!--Load custom scripts-->
+<script type="text/javascript" src="Script/Build/Script.js" editor="true"></script>
+
+<!--Load Autoview script-->
+<script type="text/javascript" src="Autoview.js"></script>
+
 </head>
-
 <body>
-    <div>
-        <a href="LinterTest/LinterTest.html"> Linter Test </a> <br>
-        <a href="ballerburg/ballerburg.html">Ballerburg</a> <br>
-        <a href="Farm/FarmDiagrams.html">FarmDiagrams</a> <br>
-        <a href="Farm/Denises Farm/main.html">Farm</a> <br>
-        <a href="Asteroids/index.html">Asteroid_Project</a> <br>
-        <a href="Asteroids/Diagrams/Diagram.html">Asteroids_Diagrams</a> <br>
-        <a href="solarSystem/diagrams/solarSystem.html">SolarSystem_Diagrams</a> <br>
-        <a href="solarSystem/index.html">SolarSystem</a> <br>
-        <a href="FirstFudge/FirstFudge.html">FirstFudge</a> <br>
-    </div> <br>
-
-    <div>
-        <embed src="CodeTwoDiary.pdf" width="1000" height="1000" type="application/pdf"> <br>
-    </div>
+<!--Dialog shown at startup only-->
+<dialog>
+<p>FUDGE Autoview</p>
+<h1>Title (will be replaced by Autoview)</h1>
+<p>click to start</p>
+</dialog>
+<!--Canvas for FUDGE to render to-->
+<canvas class="fullscreen">
+</canvas>
 </body>
-
 </html>
