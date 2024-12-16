@@ -4,6 +4,7 @@ exports.Dice = void 0;
 var Dice;
 (function (Dice) {
     function strategy(_score, _active, _potential) {
+        console.log("Dice Flo");
         return Math.random() < 0.3;
     }
     Dice.strategy = strategy;
